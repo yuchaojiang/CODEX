@@ -1,12 +1,14 @@
 # CODEX
 Package: CODEX
+
 Type: Package
-Title: A Normalization and Copy Number Variation Detection Method for Whole
-    Exome Sequencing
-Version: 1.1.1
-Date: 2015-04-26
+
+Title: A Normalization and Copy Number Variation Detection Method for Whole Exome Sequencing
+
 Author: Yuchao Jiang, Nancy R. Zhang
+
 Maintainer: Yuchao Jiang <yuchaoj@wharton.upenn.edu>
+
 Description: A normalization and copy number variation calling procedure for
     whole exome DNA sequencing data. CODEX relies on the availability of 
     multiple samples processed using the same sequencing pipeline for 
@@ -16,8 +18,13 @@ Description: A normalization and copy number variation calling procedure for
     systemic artifacts. CODEX also includes a Poisson likelihood-based recursive
     segmentation procedure that explicitly models the count-based exome 
     sequencing data.
+
 License: GPL-2
+
 Depends: R (>= 3.2.0), Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19
+
 Suggests: WES.1KG.WUGSC
+
 biocViews: ExomeSeq, Normalization, QualityControl, CopyNumberVariation
+
 LazyData: yes
