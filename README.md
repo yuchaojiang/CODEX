@@ -21,7 +21,7 @@ Description: A normalization and copy number variation calling procedure for
 
 License: GPL-2
 
-Depends: R (>= 3.2.0), Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19
+Depends: R (>= 3.2.3), Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19
 
 Suggests: WES.1KG.WUGSC
 
