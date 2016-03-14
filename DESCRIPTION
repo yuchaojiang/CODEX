@@ -16,7 +16,7 @@ Description: A normalization and copy number variation calling procedure for
     segmentation procedure that explicitly models the count-based exome 
     sequencing data.
 License: GPL-2
-Depends: R (>= 3.2.3), Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19
+Depends: R (>= 3.2.3), Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19, IRanges, Biostrings
 Suggests: WES.1KG.WUGSC
 biocViews: ExomeSeq, Normalization, QualityControl, CopyNumberVariation
 LazyData: yes
