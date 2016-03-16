@@ -14,6 +14,14 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("CODEX")
 ```
 
+## Install the devel version from GitHub
+```r
+install.packages("devtools")
+library(devtools)
+install_github("yuchaojiang/CODEX")
+```
+
+
 ## Author
 Yuchao Jiang, Nancy R. Zhang
 
