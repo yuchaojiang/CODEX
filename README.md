@@ -18,7 +18,7 @@ biocLite("CODEX")
 ```r
 install.packages("devtools")
 library(devtools)
-install_github("yuchaojiang/CODEX/pkg")
+install_github("yuchaojiang/CODEX/package")
 ```
 
 
