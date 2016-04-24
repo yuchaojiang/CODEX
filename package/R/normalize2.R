@@ -65,6 +65,7 @@ normalize2 = function (Y_qc, gc_qc, K, normal_index) {
                             1, offset = L[s,normal_index], family = poisson)$coefficients
         }
         # avoid overflow or underflow of the g latent factors
+        ghat[is.na(ghat)]=0
         if(max(ghat) >= 30){
             ghat=apply(ghat,2,function(z){
                 z[z>quantile(z,0.995)] = min(quantile(z,0.995),30)
