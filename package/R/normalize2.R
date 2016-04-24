@@ -37,6 +37,7 @@ normalize2 = function (Y_qc, gc_qc, K, normal_index) {
         temp[temp <= 0] <- min(temp[temp > 0])
         temp
       })
+      fhatnew[fhatnew<quantile(fhatnew, 0.005)]=quantile(fhatnew, 0.005)
       betahatnew = apply((Y_qc/(fhatnew * Nmat * exp(ghat %*% 
                           t(hhat))))[,normal_index], 1, median)
       betahatnew[betahatnew <= 0] = min(betahatnew[betahatnew > 0])
@@ -63,6 +64,10 @@ normalize2 = function (Y_qc, gc_qc, K, normal_index) {
           ghat[s, ] = glm(formula = Y_qc[s,normal_index] ~ hhat[normal_index,] - 
                             1, offset = L[s,normal_index], family = poisson)$coefficients
         }
+        ghat=apply(ghat,2,function(z){
+            z[z<quantile(z,0.002)]=quantile(z,0.002)
+            z[z>quantile(z,0.998)]=quantile(z,0.998)
+            z})
         for (t in 1:ncol(Y_qc)) {
           hhatnew[t, ] = glm(formula = Y_qc[, t] ~ ghat - 
                                1, offset = L[, t], family = poisson)$coefficients
@@ -72,6 +77,7 @@ normalize2 = function (Y_qc, gc_qc, K, normal_index) {
                          data = apply(gh, 1, mean), byrow = FALSE)
         hhatnew = svd(gh, nu = k, nv = k)$v
         hhdiff[hiter] = sum((hhatnew - hhat)^2)/length(hhat)
+        message("\t\t\t", "hhat diff =", signif(hhdiff[hiter], 3))
         hhat = hhatnew
         if (hhdiff[hiter] < HHTHRESH) 
           break
