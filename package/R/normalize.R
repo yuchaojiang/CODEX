@@ -64,10 +64,17 @@ normalize <- function(Y_qc, gc_qc, K) {
                     ghat[s, ] <- glm(formula = Y_qc[s, ] ~ hhat - 1, 
                                 offset = L[s, ], family = poisson)$coefficients
                 }
-                ghat=apply(ghat,2,function(z){
-                    z[z<quantile(z,0.002)]=quantile(z,0.002)
-                    z[z>quantile(z,0.998)]=quantile(z,0.998)
+                # avoid overflow or underflow of the g latent factors
+                if(max(ghat) >= 30){
+                  ghat=apply(ghat,2,function(z){
+                    z[z>quantile(z,0.995)] = min(quantile(z,0.995),30)
                     z})
+                }
+                if(min(ghat) <= -30){
+                  ghat=apply(ghat,2,function(z){
+                    z[z<quantile(z,0.005)] = max(quantile(z,0.005),-30)
+                    z})
+                }
                 for (t in 1:ncol(Y_qc)) {
                     hhatnew[t, ] <- glm(formula = Y_qc[, t] ~ ghat - 1, 
                                 offset = L[, t], family = poisson)$coefficients

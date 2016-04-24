@@ -8,3 +8,6 @@ Added p-values for output CNVs by the Wilk's theorem.
 
 03/13/2016
 Cloned to GitHub. Made minor updates.
+
+04/24/2016
+Fixed bugs in normalization function, updated segmentation function.

@@ -46,7 +46,7 @@ normalize2 = function (Y_qc, gc_qc, K, normal_index) {
       if (fhdiff[iter] > min(fhdiff)) 
         break
       message("Iteration ", iter, "\t", "beta diff =", signif(bhdiff[iter], 
-                                                              3), "\t", "f(GC) diff =", signif(fhdiff[iter], 3))
+                3), "\t", "f(GC) diff =", signif(fhdiff[iter], 3))
       fhat = fhatnew
       betahat = betahatnew
       betahatmat = matrix(nrow = nrow(Y_qc), ncol = ncol(Y_qc), 
@@ -64,10 +64,17 @@ normalize2 = function (Y_qc, gc_qc, K, normal_index) {
           ghat[s, ] = glm(formula = Y_qc[s,normal_index] ~ hhat[normal_index,] - 
                             1, offset = L[s,normal_index], family = poisson)$coefficients
         }
-        ghat=apply(ghat,2,function(z){
-            z[z<quantile(z,0.002)]=quantile(z,0.002)
-            z[z>quantile(z,0.998)]=quantile(z,0.998)
-            z})
+        # avoid overflow or underflow of the g latent factors
+        if(max(ghat) >= 30){
+            ghat=apply(ghat,2,function(z){
+                z[z>quantile(z,0.995)] = min(quantile(z,0.995),30)
+                z})
+        }
+        if(min(ghat) <= -30){
+            ghat=apply(ghat,2,function(z){
+                z[z<quantile(z,0.005)] = max(quantile(z,0.005),-30)
+                z})
+        }
         for (t in 1:ncol(Y_qc)) {
           hhatnew[t, ] = glm(formula = Y_qc[, t] ~ ghat - 
                                1, offset = L[, t], family = poisson)$coefficients
