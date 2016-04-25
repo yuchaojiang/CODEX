@@ -61,8 +61,13 @@ normalize <- function(Y_qc, gc_qc, K) {
             hhdiff <- rep(Inf, maxhiter)
             while (hiter <= maxhiter) {
                 for (s in 1:nrow(Y_qc)) {
-                    ghat[s, ] <- glm(formula = Y_qc[s, ] ~ hhat - 1, 
-                                offset = L[s, ], family = poisson)$coefficients
+                  temp=try(glm(formula = Y_qc[s,normal_index] ~ hhat[normal_index,] - 
+                                 1, offset = L[s,normal_index], family = poisson)$coefficients,silent=TRUE)
+                  if(is.character(temp)){
+                    temp=lm(log(pmax(Y_qc[s,normal_index],1)) ~ hhat[normal_index,] - 
+                              1, offset = log(L[s,normal_index]))$coefficients
+                  }
+                  ghat[s, ] = temp
                 }
                 # avoid overflow or underflow of the g latent factors
                 ghat[is.na(ghat)]=0
