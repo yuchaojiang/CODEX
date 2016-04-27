@@ -2,7 +2,7 @@ Package: CODEX
 Type: Package
 Title: A Normalization and Copy Number Variation Detection Method for Whole
     Exome Sequencing
-Version: 1.3.4
+Version: 1.3.5
 Author: Yuchao Jiang, Nancy R. Zhang
 Maintainer: Yuchao Jiang <yuchaoj@wharton.upenn.edu>
 Description: A normalization and copy number variation calling procedure for
