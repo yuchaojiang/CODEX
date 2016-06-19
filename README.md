@@ -40,7 +40,7 @@ segmentation procedure that explicitly models the count-based exome
 sequencing data.
 
 ## Citation
-Jiang, Y., Oldridge, D.A., Diskin, S.J. and Zhang, N.R., 2015. CODEX: a normalization and copy number variation detection method for whole exome sequencing. Nucleic acids research, 43(6), pp.e39-e39.
+Jiang, Y., Oldridge, D.A., Diskin, S.J. and Zhang, N.R., 2015. CODEX: a normalization and copy number variation detection method for whole exome sequencing. *Nucleic acids research*, 43(6), pp.e39-e39. [html](http://nar.oxfordjournals.org/content/43/6/e39), [pdf](http://nar.oxfordjournals.org/content/43/6/e39.full.pdf+html)
 
 ## Google user group
 https://groups.google.com/d/forum/codex_wes_cnv
@@ -52,8 +52,8 @@ https://groups.google.com/d/forum/codex_wes_cnv
 
 # CODEX for cancer genomics
 When apply CODEX to whole-exome sequencing and targeted sequencing of cancer patients (with or without normal controls):
-* use normalize2() function if there are normal samples and specify the index of the normal samples as the normal_index argument;
-* use the *fractional* mode for segmentation for somatic CNA detection due to the heterogenous structure of cancer samples and the interger mode for germline CNV detection
+* in normalization step, use *normalize2(...)* function if there are normal samples and specify the index of the normal samples in the *normal_index = * argument;
+* in segmentation step, use **fractional** mode for somatic CNA detection (cancer is heterogenous) and **interger** mode for germline CNV detection (you will get CNV calls in your blood samples, which are germline).
 
 ## CODEX for targeted sequencing
 We've adapted CODEX for targeted sequencing. Refer to codes attached (need to source segment_targeted.R for gene based segmentation).
