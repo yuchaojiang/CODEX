@@ -39,5 +39,8 @@ systemic artifacts. CODEX also includes a Poisson likelihood-based recursive
 segmentation procedure that explicitly models the count-based exome 
 sequencing data.
 
+## Citation
+Jiang, Y., Oldridge, D.A., Diskin, S.J. and Zhang, N.R., 2015. CODEX: a normalization and copy number variation detection method for whole exome sequencing. Nucleic acids research, 43(6), pp.e39-e39.
+
 ## URL
 https://sites.google.com/a/cornell.edu/yuchaojiang/home/research/codex
