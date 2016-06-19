@@ -50,10 +50,15 @@ https://groups.google.com/d/forum/codex_wes_cnv
 * [Vignettes](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.pdf)
 * [Demo code](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.R)
 
+# CODEX for cancer genomics
+When apply CODEX to whole-exome sequencing and targeted sequencing of cancer patients (with or without normal controls):
+* use normalize2() function if there are normal samples and specify the index of the normal samples as the normal_index argument;
+* use the *fractional* mode for segmentation for somatic CNA detection due to the heterogenous structure of cancer samples and the interger mode for germline CNV detection
+
 ## CODEX for targeted sequencing
 We've adapted CODEX for targeted sequencing. Refer to codes attached (need to source segment_targeted.R for gene based segmentation).
 * [codex_targeted.R](https://dl.dropboxusercontent.com/u/34105617/codex_targeted.R)
 * [segment_targeted.R](https://dl.dropboxusercontent.com/u/34105617/segment_targeted.R)
 
 ## Load CODEX segmentation results into IGV for visualization
-[CODEX_IGV.R](https://dl.dropboxusercontent.com/u/34105617/CODEX_IGV.R)
+* [CODEX_IGV.R](https://dl.dropboxusercontent.com/u/34105617/CODEX_IGV.R)
