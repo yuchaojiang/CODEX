@@ -47,13 +47,18 @@ https://groups.google.com/d/forum/codex_wes_cnv
 
 ## Bioconductor
 Bioconductor page: http://www.bioconductor.org/packages/release/bioc/html/CODEX.html
+
 Vignettes: http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.pdf
+
 Demo code: http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.R
 
 ## CODEX for targeted sequencing
 We've adapted CODEX for targeted sequencing. Refer to codes attached (need to source segment_targeted.R for gene based segmentation):
+
 codex_targeted.R (https://dl.dropboxusercontent.com/u/34105617/codex_targeted.R)
+
 segment_targeted.R (https://dl.dropboxusercontent.com/u/34105617/segment_targeted.R)
 
 ## Load CODEX segmentation results into IGV for visualization
+
 CODEX_IGV.R (https://dl.dropboxusercontent.com/u/34105617/CODEX_IGV.R)
