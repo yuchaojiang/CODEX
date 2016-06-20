@@ -4,7 +4,7 @@
 <img border="0" src="http://bioconductor.org/shields/years-in-bioc/CODEX.svg"/>
 
 
-# CODEX: COpy number variation Detection by EXome sequencing
+# CODEX
 A Normalization and Copy Number Variation Detection Method for Whole Exome Sequencing
 
 ## Install the current release from Bioconductor
