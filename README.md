@@ -1,6 +1,6 @@
 <img border="0" src="http://bioconductor.org/shields/availability/release/CODEX.svg"/>
 <img border="0" src="http://bioconductor.org/shields/downloads/CODEX.svg"/>
-<img border="0" src="http://bioconductor.org/shields/build/release/bioc/CODEX.svg"/>
+<img border="0" src="http://bioconductor.org/shields/build/devel/bioc/CODEX.svg"/>
 <img border="0" src="http://bioconductor.org/shields/years-in-bioc/CODEX.svg"/>
 
 
