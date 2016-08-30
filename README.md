@@ -58,9 +58,9 @@ When apply CODEX to whole-exome sequencing and targeted sequencing of cancer pat
 
 ## CODEX for targeted sequencing
 We've adapted CODEX for targeted sequencing. Refer to codes attached (need to source segment_targeted.R for gene based segmentation).
-* [codex_targeted.R](https://dl.dropboxusercontent.com/u/34105617/codex_targeted.R)
-* [segment_targeted.R](https://dl.dropboxusercontent.com/u/34105617/segment_targeted.R)
+* [codex_targeted.R](https://github.com/yuchaojiang/CODEX/blob/master/targeted_sequencing/codex_targeted.R)
+* [segment_targeted.R](https://github.com/yuchaojiang/CODEX/blob/master/targeted_sequencing/segment_targeted.R)
 
 ## Visualization by IGV
 One can load CODEX's CNV calling results into [IGV](http://www.broadinstitute.org/igv/) for visualization by generating a tab-delimited seg file for each sample.
-* [CODEX_IGV.R](https://dl.dropboxusercontent.com/u/34105617/CODEX_IGV.R)
+* [CODEX_IGV.R](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
