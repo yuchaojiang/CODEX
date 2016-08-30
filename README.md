@@ -68,6 +68,7 @@ One can load CODEX's CNV calling results into [IGV](http://www.broadinstitute.or
 ## CODEX for mouse genome
 CODEX can be applied to WES of the mouse genome. The library for the mm10 mouse genome sequencing needs to be loaded: 
 * [BSgenome.Mmusculus.UCSC.mm10](http://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm10.html).
+
 The GC content and the mappability can be obtained from the code below with minor adaptations for the mouse genome:
 * [GC content](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
 * [Mappability Pre-Calculation](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
