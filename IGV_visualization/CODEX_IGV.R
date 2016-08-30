@@ -1,4 +1,3 @@
-setwd('/home/stat/yuchaoj/yuchaoj/NBL_CODEX')
 projectname='nbl'
 chr='1'
 finalcall.chr=read.table(paste(projectname,'_',chr,'_CODEX_frac2.txt',sep=''),head=T,sep='\t')
