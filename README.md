@@ -47,6 +47,7 @@ https://groups.google.com/d/forum/codex_wes_cnv
 
 ## Bioconductor
 * [Bioconductor page](http://www.bioconductor.org/packages/release/bioc/html/CODEX.html)
+* [Bioconductor download stats](http://bioconductor.org/packages/stats/bioc/CODEX/)
 * [Vignettes](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.pdf)
 * [Demo code](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.R)
 
