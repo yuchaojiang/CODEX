@@ -51,7 +51,7 @@ https://groups.google.com/d/forum/codex_wes_cnv
 * [Vignettes](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.pdf)
 * [Demo code](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.R)
 
-## CODEX for cancer genomics
+## IMPORTANT: CODEX for cancer genomics
 When apply CODEX to whole-exome sequencing and targeted sequencing of cancer patients:
 * in normalization step, use *normalize2(...)* function if there are normal samples and specify the index of the normal samples as a numerical vector in the *normal_index* argument;
 * in segmentation step, use **fractional** mode for somatic CNA detection (cancer is heterogenous) and **interger** mode for germline CNV detection (you will get CNV calls in your blood samples, which are germline).
@@ -64,3 +64,11 @@ We've adapted CODEX for targeted sequencing. Instead of normalizing and segmenti
 ## Visualization by IGV
 One can load CODEX's CNV calling results into [IGV](http://www.broadinstitute.org/igv/) for visualization by generating a tab-delimited seg file for each sample. Below is a sample code that we use in our daily practice -- for each sample, a *.seg.txt file is generated with six columns and header 'Sample', 'Chromosome','Start','End','Num_Probes','Segment_Mean', which correspond to sample name, chromosome, CNV start bp, CNV end bp, number of exonic targets, and log ratio of raw/observed depths of coverage versus normalized/expected coverage (deletion has a negative log ratio, duplication has a positive log ratio, copy-neutral region has a log ratio around 0).
 * [CODEX_IGV.R](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
+
+## CODEX for mouse genome
+CODEX can be applied to WES of the mouse genome. The library for the mm10 mouse genome sequencing needs to be loaded: 
+* [BSgenome.Mmusculus.UCSC.mm10](http://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm10.html).
+The GC content and the mappability can be obtained from the code below with minor adaptations for the mouse genome:
+* [GC content](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
+* [Mappability Pre-Calculation](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
+* [Mappability](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
