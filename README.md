@@ -70,6 +70,6 @@ CODEX can be applied to WES of the mouse genome. The library for the mm10 mouse 
 * [BSgenome.Mmusculus.UCSC.mm10](http://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm10.html).
 
 The GC content and the mappability can be obtained from the code below with minor adaptations for the mouse genome:
-* [GC content](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
-* [Mappability Pre-Calculation](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
-* [Mappability](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
+* [GC content](https://github.com/yuchaojiang/CODEX/blob/master/mouse/getgc.R)
+* [Mappability pre-calculation](https://github.com/yuchaojiang/CODEX/blob/master/mouse/mapp.R) (Note: This step can be computationally expensive and thus parallel computing is recommended. For CODEX in its default setting, the mappability for exonic targets in human h19 assembly is pre-computed and stored as part of the package).
+* [Mappability](https://github.com/yuchaojiang/CODEX/blob/master/mouse/getmapp.R)
