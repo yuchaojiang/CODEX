@@ -29,13 +29,29 @@ sequencing data of 46 HapMap samples sequenced at the Washington University
 Genome Sequencing Center. Only the 401-500 exons from chromosome 22 are 
 analysed for illustration purposes. R packages are available at Bioconductor for \href{http://www.bioconductor.org/packages/devel/bioc/html/CODEX.html}{CODEX} and the toy dataset \href{http://www.bioconductor.org/packages/devel/data/experiment/html/WES.1KG.WUGSC.html}{WES.1KG.WUGSC}.
 
-\section*{1. Installation and online forum}
-Installation information is available \href{https://sites.google.com/a/cornell.edu/yuchaojiang/home/research/codex}{here}. The online Q\&A forum is available \href{https://groups.google.com/d/forum/codex_wes_cnv}{here}. If you've any questions regarding the software, please don't hesitate emailing us at \href{mailto:codex_wes_cnv@googlegroups.com}{codex\_wes\_cnv@googlegroups.com} and/or \\
-\href{mailto:yuchaoj@wharton.upenn.edu}{yuchaoj@wharton.upenn.edu}.
+\section*{1. Website and online forum}
+CODEX's website with usage and installation information: {\href{https://github.com/yuchaojiang/CODEX}{https://github.com/yuchaojiang/CODEX}.\\
+Online Q\&A forum: \href{https://groups.google.com/d/forum/codex_wes_cnv}{https://groups.google.com/d/forum/codex\_wes\_cnv}.\\
+If you've any questions regarding the software, please don't hesitate emailing us at \href{mailto:codex_wes_cnv@googlegroups.com}{codex\_wes\_cnv@googlegroups.com}.
 
 \section*{2. CODEX workflow:}
 
-\subsection*{2.1 Get directories of .bam files, read in exon target positions 
+\subsection*{2.1 Install CODEX.}
+Install the current release from Bioconductor:
+<<install1, eval=FALSE>>=
+## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("CODEX")
+@
+Install the devel version from GitHub:
+<<install2, eval=FALSE>>=
+install.packages("devtools")
+library(devtools)
+install_github("yuchaojiang/CODEX/package")
+@
+
+
+\subsection*{2.2 Get directories of .bam files, read in exon target positions 
 from .bed files, and get sample names.}
 The direct input of \verb@CODEX@ include: \verb@bamdir@, which is a vector indicating the
 directories of all .bam files; \verb@sampname@, which is a column vector with row entries
@@ -58,20 +74,20 @@ bamdir <- bambedObj$bamdir; sampname <- bambedObj$sampname
 ref <- bambedObj$ref; projectname <- bambedObj$projectname; chr <- bambedObj$chr
 @
 
-\subsection*{2.2 Get raw read depth from the .bam files. Read lengths across all 
+\subsection*{2.3 Get raw read depth from the .bam files. Read lengths across all 
 samples are also returned.} 
 <<coverageObj1>>=
 coverageObj <- getcoverage(bambedObj, mapqthres = 20)
 Y <- coverageObj$Y; readlength <- coverageObj$readlength
 @
 
-\subsection*{2.3 Compute GC content and mappability for each exon target.}
+\subsection*{2.4 Compute GC content and mappability for each exon target.}
 <<gcmapp1>>=
 gc <- getgc(chr, ref)
 mapp <- getmapp(chr, ref)
 @
 
-\subsection*{2.4 Take a sample-wise and exon-wise quality control procedure on 
+\subsection*{2.5 Take a sample-wise and exon-wise quality control procedure on 
 the depth of coverage matrix.}
 <<qcObj1>>=
 qcObj <- qc(Y, sampname, chr, ref, mapp, gc, cov_thresh = c(20, 4000), 
@@ -82,7 +98,7 @@ write.table(qcmat, file = paste(projectname, '_', chr, '_qcmat', '.txt', sep='')
             sep='\t', quote=FALSE, row.names=FALSE)
 @
 
-\subsection*{2.5 Fit Poisson latent factor model for normalization of the read 
+\subsection*{2.6 Fit Poisson latent factor model for normalization of the read 
 depth data.}
 <<normObj1>>=
 normObj <- normalize(Y_qc, gc_qc, K = 1:9)
@@ -99,7 +115,7 @@ normObj <- normalize2(Y_qc, gc_qc, K = 1:9, normal_index=seq(1,45,2))
 Yhat <- normObj$Yhat; AIC <- normObj$AIC; BIC <- normObj$BIC
 RSS <- normObj$RSS; K <- normObj$K
 @
-\subsection*{2.6 Determine the number of latent factors. AIC, BIC, and deviance 
+\subsection*{2.7 Determine the number of latent factors. AIC, BIC, and deviance 
 reduction plots are generated in a .pdf file.}
 CODEX reports all three statistical metrics (AIC, BIC, percent of Variance 
 explained) and uses BIC as the default method to determine the number of 
@@ -127,7 +143,7 @@ set at 2.}
 \label{fig:one}
 \end{figure}
 
-\subsection*{2.7 Fit the Poisson log-likelihood ratio based segmentation 
+\subsection*{2.8 Fit the Poisson log-likelihood ratio based segmentation 
 procedure to determine CNV regions across all samples.}
 For germline CNV detection, \verb@CODEX@ uses the "integer" mode; for CNV 
 detection involving large recurrent chromosomal aberrations in mixture 

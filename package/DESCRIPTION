@@ -2,7 +2,7 @@ Package: CODEX
 Type: Package
 Title: A Normalization and Copy Number Variation Detection Method for Whole
     Exome Sequencing
-Version: 1.3.5
+Version: 1.5.1
 Author: Yuchao Jiang, Nancy R. Zhang
 Maintainer: Yuchao Jiang <yuchaoj@wharton.upenn.edu>
 Description: A normalization and copy number variation calling procedure for
@@ -15,7 +15,7 @@ Description: A normalization and copy number variation calling procedure for
     segmentation procedure that explicitly models the count-based exome 
     sequencing data.
 License: GPL-2
-Depends: R (>= 3.2.3), Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19, IRanges, Biostrings
+Depends: R (>= 3.2.3), Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19, IRanges, Biostrings, S4Vectors
 Suggests: WES.1KG.WUGSC
 biocViews: ExomeSeq, Normalization, QualityControl, CopyNumberVariation
 LazyData: yes

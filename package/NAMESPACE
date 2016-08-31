@@ -1,3 +1,4 @@
 export(segment, qc, normalize, getmapp, getcoverage, getbambed, choiceofK, 
     getgc, normalize2)
-import(Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19, IRanges, Biostrings)
+import(Rsamtools, GenomeInfoDb, BSgenome.Hsapiens.UCSC.hg19, IRanges,
+    Biostrings, S4Vectors)
