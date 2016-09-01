@@ -26,7 +26,7 @@ install_github("yuchaojiang/CODEX/package")
 Yuchao Jiang, Nancy R. Zhang
 
 ## Maintainer
-Yuchao Jiang <yuchaoj@wharton.upenn.edu>
+Yuchao Jiang <yuchaoj@upenn.edu>
 
 ## Description
 A normalization and copy number variation calling procedure for
