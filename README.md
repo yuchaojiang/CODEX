@@ -27,7 +27,7 @@ sequencing data.
 
 
 ## Installation
-# Install the current release from Bioconductor
+* Install the current release from Bioconductor
 ```r
 ## try http:// if https:// URLs are not supported
 source("https://bioconductor.org/biocLite.R")
