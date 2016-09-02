@@ -7,20 +7,6 @@
 # CODEX
 A Normalization and Copy Number Variation Detection Method for Whole Exome Sequencing
 
-## Install the current release from Bioconductor
-```r
-## try http:// if https:// URLs are not supported
-source("https://bioconductor.org/biocLite.R")
-biocLite("CODEX")
-```
-
-## Install the devel version from GitHub
-```r
-install.packages("devtools")
-library(devtools)
-install_github("yuchaojiang/CODEX/package")
-```
-
 
 ## Author
 Yuchao Jiang, Nancy R. Zhang
@@ -39,17 +25,36 @@ systemic artifacts. CODEX also includes a Poisson likelihood-based recursive
 segmentation procedure that explicitly models the count-based exome 
 sequencing data.
 
-## Citation
-Jiang, Y., Oldridge, D.A., Diskin, S.J. and Zhang, N.R., 2015. CODEX: a normalization and copy number variation detection method for whole exome sequencing. *Nucleic acids research*, 43(6), pp.e39-e39. [[html](http://nar.oxfordjournals.org/content/43/6/e39), [pdf](http://nar.oxfordjournals.org/content/43/6/e39.full.pdf+html)]
+
+## Installation
+# Install the current release from Bioconductor
+```r
+## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("CODEX")
+```
+
+* Install the devel version from GitHub
+```r
+install.packages("devtools")
+library(devtools)
+install_github("yuchaojiang/CODEX/package")
+```
+
+## Demo code & Vignettes
+* [Demo code](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.R)
+* [Vignettes](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.pdf)
+* [Bioconductor page](http://www.bioconductor.org/packages/release/bioc/html/CODEX.html)
+* [Bioconductor download stats](http://bioconductor.org/packages/stats/bioc/CODEX/)
+
 
 ## Google user group (Q&A)
 https://groups.google.com/d/forum/codex_wes_cnv
 
-## Bioconductor
-* [Bioconductor page](http://www.bioconductor.org/packages/release/bioc/html/CODEX.html)
-* [Bioconductor download stats](http://bioconductor.org/packages/stats/bioc/CODEX/)
-* [Vignettes](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.pdf)
-* [Demo code](http://www.bioconductor.org/packages/devel/bioc/vignettes/CODEX/inst/doc/CODEX_vignettes.R)
+
+## Citation
+Jiang, Y., Oldridge, D.A., Diskin, S.J. and Zhang, N.R., 2015. CODEX: a normalization and copy number variation detection method for whole exome sequencing. *Nucleic acids research*, 43(6), pp.e39-e39. [[html](http://nar.oxfordjournals.org/content/43/6/e39), [pdf](http://nar.oxfordjournals.org/content/43/6/e39.full.pdf+html)]
+
 
 ## IMPORTANT: CODEX for cancer genomics
 When apply CODEX to whole-exome sequencing and targeted sequencing of cancer patients:
