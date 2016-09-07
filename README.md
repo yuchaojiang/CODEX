@@ -57,10 +57,10 @@ Jiang, Y., Oldridge, D.A., Diskin, S.J. and Zhang, N.R., 2015. CODEX: a normaliz
 
 
 ## IMPORTANT: CODEX for cancer genomics
-When apply CODEX to whole-exome sequencing and targeted sequencing of cancer patients:
+When apply CODEX to whole-exome sequencing and targeted sequencing in cancer genomics:
 * In normalization step, use *normalize2(...)* function if there are normal samples and specify the index of the normal samples as a numerical vector in the *normal_index* argument;
 * In segmentation step, use **fractional** mode for somatic CNA detection (cancer is heterogenous) and **interger** mode for germline CNV detection (you will get CNV calls in your blood samples, which are germline).
-* For segmentation with paired tumor-normal experimental design, a modified CBS (circular binary segmentation) algorithm can be adopted, which ultilizes the pair information. Note that, from our experience, the default segmentation by CODEX (not using the pair information) does not make much difference. Normalization is the first order effect in WES study design. Refer to the paired_tumor_normal_segmentation folder for code (not actively updated/maintained).
+* For segmentation with paired tumor-normal experimental design, a modified CBS (circular binary segmentation) algorithm can be adopted, which ultilizes the pair information. Refer to the paired_tumor_normal_segmentation folder for code (not actively updated/maintained). Note that, from our experience, the default segmentation by CODEX (not using the pair information) does not make much difference. Normalization is the first order effect in WES study design.
 
 ## CODEX for targeted sequencing
 We've adapted CODEX for targeted sequencing. Instead of normalizing and segmenting each chromosome separately, for targeted sequencing, we combine all targets across the genome to perform normalization, followed by segmentation within each gene. Refer to codes below (need to source segment_targeted.R for gene-based segmentation).
