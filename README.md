@@ -68,7 +68,7 @@ We've adapted CODEX for targeted sequencing. Instead of normalizing and segmenti
 * [segment_targeted.R](https://github.com/yuchaojiang/CODEX/blob/master/targeted_sequencing/segment_targeted.R)
 
 ## Visualization by IGV
-One can load CODEX's CNV calling results into [IGV](http://www.broadinstitute.org/igv/) for visualization by generating a tab-delimited seg file for each sample. Below is a sample code that we use in our daily practice -- for each sample, a *.seg.txt file is generated with six columns and header 'Sample', 'Chromosome','Start','End','Num_Probes','Segment_Mean', which correspond to sample name, chromosome, CNV start bp, CNV end bp, number of exonic targets, and log ratio of raw/observed depths of coverage versus normalized/expected coverage (deletion has a negative log ratio, duplication has a positive log ratio, copy-neutral region has a log ratio around 0).
+One can load CODEX's CNV calling results into [IGV](http://www.broadinstitute.org/igv/) for visualization by generating a tab-delimited seg file for each sample. Below is a sample code that we use in our daily practice -- for each sample, a *.seg.txt file is generated with six columns and header 'Sample', 'Chromosome','Start','End','Num_Probes','Segment_Mean', which correspond to sample name, chromosome, CNV start bp, CNV end bp, number of exonic targets, and log ratio of raw (i.e. observed) depths of coverage versus normalized (i.e. expected) coverage (deletion has a negative log ratio, duplication has a positive log ratio, copy-neutral region has a log ratio around 0).
 * [CODEX_IGV.R](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
 
 ## CODEX for mouse genome
