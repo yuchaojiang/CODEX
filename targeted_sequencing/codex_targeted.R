@@ -101,13 +101,14 @@ length(sampname_qc)
 sampfilter=apply(Y_qc,2,median)>=50  # need to exclude 3 samples (exon capture failure)
 sampname_qc=sampname_qc[sampfilter]
 Y_qc=Y_qc[,sampfilter]
-
-qcmat=cbind(qcmat[,1:3],gene,qcmat[,4:12])
-colnames(qcmat)[4]='gene'
-qcmat[,1]=chr.all
-
-write.table(qcmat,file=paste(projectname,'_qcmat','.txt',sep=''),sep='\t',quote=F,row.names=F)
 rm(qcObj)
+
+# The code commented out below has been reported by other users to lead to error.
+# This code does NOT affect the latter part to run but basically outputs QC results.
+# qcmat=cbind(qcmat[,1:3],gene,qcmat[,4:12])
+# colnames(qcmat)[4]='gene'
+# qcmat[,1]=chr.all
+# write.table(qcmat,file=paste(projectname,'_qcmat','.txt',sep=''),sep='\t',quote=F,row.names=F)
 
 normObj=normalize2(Y_qc,gc_qc,K=1:15,normal_index=29:44)   # normal index needs to be changed.
 Yhat=normObj$Yhat; AIC=normObj$AIC; BIC=normObj$BIC; RSS=normObj$RSS; K=normObj$K
