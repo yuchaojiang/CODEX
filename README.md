@@ -78,4 +78,5 @@ The GC content and the mappability can be obtained from the code below with mino
 * [Mappability](https://github.com/yuchaojiang/CODEX/blob/master/mouse/getmapp.R)
 
 ## Common questions
-  * How many samples does CODEX need? Should I separate samples in batches?
+  * How many samples does CODEX need? Should I separately run samples from different batches?
+    We have applied CODEX to data set of 30 to 500 samples. Yes, samples from different batches are highly recommended to run separately.
