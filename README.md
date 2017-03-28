@@ -80,4 +80,4 @@ The GC content and the mappability can be obtained from the code below with mino
 ## Common questions
   * How many samples does CODEX need? Should I separately run samples from different batches?
     
-    We have applied CODEX to data set of 30 to 500 samples. Yes, samples from different batches are highly recommended to run separately.
+    We have applied CODEX to data sets of sample size ranging from 30 to 500. Yes, samples from different batches are highly recommended to run separately. The Poisson latent factor can presumably capture the batch effects but if additional knowledge is available beforehand, it should be ultilized. If batch information is not available, sometimes we refer to the header within the bam files.
