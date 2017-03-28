@@ -81,3 +81,7 @@ The GC content and the mappability can be obtained from the code below with mino
   * How many samples does CODEX need? Should I separately run samples from different batches?
     
     We have applied CODEX to data sets of sample size ranging from 30 to 500. Yes, samples from different batches are highly recommended to run separately. The Poisson latent factor can presumably capture the batch effects but if additional knowledge is available beforehand, it should be ultilized. If batch information is not available, sometimes we refer to the header within the bam files.
+    
+  * Error in glm.fit?
+    
+    Yes, we are aware that sometimes the normalize() function leads to error in glm.fit. CODEX adopts an iterative estimation procedure to estimate the Poisson latent factors via Poisson glm, the exon-specific bias by taking the median across all samples, and the GC content bias by fitting a non-parametric smooth.spline. We did our best to make sure that the iteration/estimation runs properly, yet sometimes the Poisson glm function in R still fails to converge due to: (1) extreme heterogeneity in the data (i.e., the data is just too noisy or the samples are from multiple batches); (2) the number of Poisson latent factors to estimate is too large. See question below.
