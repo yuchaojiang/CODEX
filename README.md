@@ -76,3 +76,6 @@ The GC content and the mappability can be obtained from the code below with mino
 * [GC content](https://github.com/yuchaojiang/CODEX/blob/master/mouse/getgc.R)
 * [Mappability pre-calculation](https://github.com/yuchaojiang/CODEX/blob/master/mouse/mapp.R) (Note: This step can be computationally extensive and thus parallel computing is recommended. For CODEX in its default setting, the mappability for exonic targets in human h19 assembly is pre-computed and stored as part of the package).
 * [Mappability](https://github.com/yuchaojiang/CODEX/blob/master/mouse/getmapp.R)
+
+## Common questions
+  * How many samples does CODEX need? Should I separate samples in batches?
