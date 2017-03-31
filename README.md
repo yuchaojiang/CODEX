@@ -29,6 +29,7 @@ sequencing data.
 ## try http:// if https:// URLs are not supported
 source("https://bioconductor.org/biocLite.R")
 biocLite("CODEX")
+biocLite("WES.1KG.WUGSC") # toy dataset
 ```
 
 * Install the devel version from GitHub
