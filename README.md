@@ -69,6 +69,19 @@ We've adapted CODEX for targeted sequencing. Instead of normalizing and segmenti
 One can load CODEX's CNV calling results into [IGV](http://www.broadinstitute.org/igv/) for visualization by generating a tab-delimited seg file for each sample. Below is a sample code that we use in our daily practice -- for each sample, a *.seg.txt file is generated with six columns and header 'Sample', 'Chromosome','Start','End','Num_Probes','Segment_Mean', which correspond to sample name, chromosome, CNV start bp, CNV end bp, number of exonic targets, and log ratio of raw (i.e. observed) depths of coverage versus normalized (i.e. expected) coverage (deletion has a negative log ratio, duplication has a positive log ratio, copy-neutral region has a log ratio around 0).
 * [CODEX_IGV.R](https://github.com/yuchaojiang/CODEX/blob/master/IGV_visualization/CODEX_IGV.R)
 
+## CODEX for hg38?
+CODEX by default is for hg19 reference. It can be adapted to hg38: only the calculations of GC content and mappability need to be changed; to get coverage for exons across samples stays the same (make sure that the exonic targets in the bed file are also in hg38 coordinates). To calculte GC content in hg38, you need to download the hg38 reference from [Bioconductor](https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg38/). Then, after loading CODEX, load the hg38 reference package so that the Hsapiens (hg19 by CODEX's default) is masked to hg38. Note that CODEX can also be adapted to the mouse genome, see below.
+
+```r
+## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("BSgenome.Hsapiens.UCSC.hg38")
+
+library(CODEX)
+library(BSgenome.Hsapiens.UCSC.hg38)
+# The following object is masked from ‘package:BSgenome.Hsapiens.UCSC.hg19’:  Hsapiens
+```
+
 ## CODEX for mouse genome
 CODEX can be applied to WES of the mouse genome. The library for the mm10 mouse genome sequencing needs to be loaded: 
 * [BSgenome.Mmusculus.UCSC.mm10](http://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm10.html).
