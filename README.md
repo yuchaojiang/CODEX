@@ -36,8 +36,8 @@ biocLite("WES.1KG.WUGSC") # toy dataset
 ```r
 # Install dependent packages first
 source("https://bioconductor.org/biocLite.R")
-biocLite("BSgenome.Hsapiens.UCSC.hg19")
 biocLite("GenomeInfoDb")
+biocLite("BSgenome.Hsapiens.UCSC.hg19")
 
 # Install CODEX
 install.packages("devtools")
