@@ -34,6 +34,11 @@ biocLite("WES.1KG.WUGSC") # toy dataset
 
 * Install the devel version from GitHub
 ```r
+# install dependent packages first
+source("https://bioconductor.org/biocLite.R")
+biocLite("BSgenome.Hsapiens.UCSC.hg19")
+biocLite("GenomeInfoDb")
+
 install.packages("devtools")
 library(devtools)
 install_github("yuchaojiang/CODEX/package")
