@@ -135,6 +135,6 @@ The GC content and the mappability can be obtained from the code below with mino
     
   * How do I generate all segments including copy number neutral ones?
   
-  Code to generate all copy number segments including null regions after CODEX's default segmentation can be found [here](https://github.com/yuchaojiang/CODEX/blob/master/instructions/finalcall_null_region.R).
+    Code to generate all copy number segments including null regions after CODEX's default segmentation can be found [here](https://github.com/yuchaojiang/CODEX/blob/master/instructions/finalcall_null_region.R).
     
     
