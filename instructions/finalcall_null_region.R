@@ -19,7 +19,9 @@ for(sampi in sampname_qc){
   } else{
     cn.index=which(finalcall[,1]==sampi)
     st.temp=c(1,as.numeric(finalcall[cn.index,'ed_exon'])+1)
+    st.temp[st.temp > length(ref_qc)] = length(ref_qc)
     ed.temp=c(as.numeric(finalcall[cn.index,'st_exon'])-1,length(ref_qc))
+    ed.temp[ed.temp < 1] = 1
     for(t in 1:length(st.temp)){
       finalcall.temp=c(sampi,chr,'neutral',start(ref_qc)[st.temp[t]],end(ref_qc)[ed.temp[t]],
                        round((end(ref_qc)[ed.temp[t]]-start(ref_qc)[st.temp[t]]+1)/1000,3),
@@ -56,7 +58,9 @@ for(sampi in sampname_qc){
   } else{
     cn.index=which(finalcall[,1]==sampi)
     st.temp=c(1,as.numeric(finalcall[cn.index,'ed_exon'])+1)
+    st.temp[st.temp > length(ref_qc)] = length(ref_qc)
     ed.temp=c(as.numeric(finalcall[cn.index,'st_exon'])-1,length(ref_qc))
+    ed.temp[ed.temp < 1] = 1
     for(t in 1:length(st.temp)){
       finalcall.temp=c(sampi,chr,'neutral',start(ref_qc)[st.temp[t]],end(ref_qc)[ed.temp[t]],
                        round((end(ref_qc)[ed.temp[t]]-start(ref_qc)[st.temp[t]]+1)/1000,3),
