@@ -9,7 +9,7 @@ A Normalization and Copy Number Variation Detection Method for Whole Exome Seque
 Yuchao Jiang, Nancy R. Zhang
 
 ## Maintainer
-Yuchao Jiang <yuchaoj@upenn.edu>
+Yuchao Jiang <yuchaoj@email.unc.edu>
 
 ## Description
 A normalization and copy number variation calling procedure for
