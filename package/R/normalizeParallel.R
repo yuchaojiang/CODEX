@@ -5,7 +5,7 @@ normalizeParallel <- function( Y_qc, gc_qc, K )
 
     nCores <- detectCores() - 1
     cl <- makeCluster( nCores ) 
-    clusterExport( cl, list( "Y_qc", "gc_qc", "K", "normalizeSingleK" ) )
+    clusterExport( cl, list( "Y_qc", "gc_qc", "normalizeSingleK" ) )
     results = parLapply( cl, K, function(k) normalizeSingleK( Y_qc, gc_qc, k) )
     stopCluster( cl )
 

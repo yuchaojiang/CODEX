@@ -1,7 +1,7 @@
-\name{normalize}
-\alias{normalize}
+\name{normalizeParallel}
+\alias{normalizeParallel}
 \title{
-Normalization of read depth from whole exome sequencing, run in parallel by number of clusters
+Normalization of read depth from whole exome sequencing
 }
 \description{
 Fits a Poisson log-linear model that normalizes the read depth data from whole 
@@ -32,7 +32,8 @@ normalize(Y_qc, gc_qc, K)
     \item{K }{Number of latent Poisson factors}
 }
 \author{
-Yuchao Jiang \email{yuchaoj@wharton.upenn.edu}
+Yuchao Jiang \email{yuchaoj@wharton.upenn.edu},
+Gene Urrutia \email{urrutia@live.unc.edu}
 }
 \seealso{
     \code{\link{qc}},
