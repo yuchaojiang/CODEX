@@ -141,6 +141,7 @@ segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr){
       colnames( finalcalls[[ k ]] ) = c( 'sample_name','chr','cnv','st_bp','ed_bp', 
                                          'length_kb', 'st_exon', 'ed_exon', 'raw_cov', 
                                          'norm_cov')
+      finalcalls[[ k ]]  = finalcalls[[ k ]][ order(st_exon), ]
     }
     
     k=k+1
