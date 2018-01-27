@@ -1,4 +1,4 @@
-segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr){
+segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode){
   
   #Normalize reads by expected reads
   YhatOptK = Yhat[[optK]]
@@ -135,12 +135,14 @@ segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr){
       norm_cov = sapply( seq_along( st_exon ), function ( j ){
         sum( YhatOptK[ st_exon[ j ]:ed_exon[ j ], k ] )
       }) 
-      
+      copy_no = round( 2 * ( raw_cov / norm_cov ), 3 )
+      if ( mode == "integer" ) copy_no = round( copy_no )
       finalcalls[[ k ]] = data.frame( sampname_qc[ k ], chr, cnv_type, st_bp, ed_bp, 
-                                      length_kb, st_exon, ed_exon, raw_cov, norm_cov)
+                                      length_kb, st_exon, ed_exon, raw_cov, norm_cov, 
+                                      copy_no)
       colnames( finalcalls[[ k ]] ) = c( 'sample_name','chr','cnv','st_bp','ed_bp', 
                                          'length_kb', 'st_exon', 'ed_exon', 'raw_cov', 
-                                         'norm_cov')
+                                         'norm_cov', 'copy_no' )
       finalcalls[[ k ]]  = finalcalls[[ k ]][ order(st_exon), ]
     }
     

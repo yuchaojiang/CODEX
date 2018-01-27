@@ -40,11 +40,13 @@ segment(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, lmax, mode)
     Final callset of CNVs with genotyping results.
 }
 \author{
-Yuchao Jiang \email{yuchaoj@wharton.upenn.edu}
+ Yuchao Jiang \email{ yuchaoj@wharton.upenn.edu } 
+ 
+ Gene Urrutia \email{ urutia@live.unc.edu } 
 }
 \seealso{
-    \code{\link{normalize}},
-    \code{\link{choiceofK}}
+    \code{ \link{ segment } },
+    \code{ \link{ segmentHMM } }
 }
 \examples{
 Y_qc <- qcObjDemo$Y_qc
@@ -54,8 +56,10 @@ K <- normObjDemo$K
 sampname_qc <- qcObjDemo$sampname_qc
 ref_qc <- qcObjDemo$ref_qc
 chr <- bambedObjDemo$chr
-finalcall <- segment(Y_qc, Yhat, optK = K[which.max(BIC)], K = K, sampname_qc,
-    ref_qc, chr, lmax = 200, mode = "integer")
+
+finalcall <- segment(Y_qc, Yhat, optK = K[which.max(BIC)], 
+  K = K, sampname_qc, ref_qc, chr, lmax = 200, mode = "integer")
+
 finalcall
 }
 \keyword{ package }

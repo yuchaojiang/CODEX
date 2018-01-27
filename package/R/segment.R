@@ -92,10 +92,17 @@ segment <- function(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, lmax, mode) {
         finalcall <- cbind(finalcall[, 1:2], cnvtype, st, ed, (ed - st + 
             1)/1000, finalcall[, 3:9])
     }
-    colnames(finalcall) <- c("sample_name", "chr", "cnv", "st_bp", "ed_bp", 
-        "length_kb", "st_exon", "ed_exon", "raw_cov", 
-        "norm_cov", "copy_no", "lratio", "mBIC")
     rownames(finalcall) <- rep("", nrow(finalcall))
-    lratio=as.numeric(finalcall[,'lratio'])
+    finalcall = data.frame(finalcall, stringsAsFactors = F)
+    colnames(finalcall) <- c("sample_name", "chr", "cnv", "st_bp", "ed_bp", 
+                             "length_kb", "st_exon", "ed_exon", "raw_cov", 
+                             "norm_cov", "copy_no", "lratio", "mBIC")
+    numColumns = c("chr", "st_bp", "ed_bp", 
+                   "length_kb", "st_exon", "ed_exon", "raw_cov", 
+                   "norm_cov", "copy_no", "lratio", "mBIC")
+    for ( numColumn in numColumns ) { 
+      finalcall[ ,numColumn ] = 
+        as.numeric( paste( finalcall[ ,numColumn ] ) )
+    }
     finalcall
 }

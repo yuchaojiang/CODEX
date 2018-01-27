@@ -8,7 +8,7 @@ Hidden Markov model for segmentation of CNV events and genotyping, using
 normalized read depth from whole exome sequencing.  This algorithm incorporates distance between exons as information. 
 }
 \usage{
-segmentHMM(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr)
+segmentHMM(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -31,6 +31,8 @@ segmentHMM(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr)
     procedure returned from \code{\link{qc}}}
     \item{chr}{
     Chromosome number returned from \code{\link{getbambed}}}
+    \item{mode}{	
+    Can be either "integer" or "fraction", which respectively correspond to format of the     returned copy numbers.  This does not affect the algorithm. }
 }
 \value{
     Final callset of CNVs with genotyping results.
@@ -40,6 +42,10 @@ segmentHMM(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr)
  
  Gene Urrutia \email{urutia@live.unc.edu} 
 }
+\seealso{
+    \code{ \link{ segment } },
+    \code{ \link{ segmentHMM } }
+}
 \examples{
 Y_qc <- qcObjDemo$Y_qc
 Yhat <- normObjDemo$Yhat
@@ -48,8 +54,10 @@ K <- normObjDemo$K
 sampname_qc <- qcObjDemo$sampname_qc
 ref_qc <- qcObjDemo$ref_qc
 chr <- bambedObjDemo$chr
-finalcall <- segmentHMM(Y_qc, Yhat, optK = K[which.max(BIC)], K = K, sampname_qc,
-    ref_qc, chr)
+
+finalcall <- segmentHMM(Y_qc, Yhat, optK = K[which.max(BIC)], 
+  K = K, sampname_qc, ref_qc, chr, mode = "integer")
+
 finalcall
 }
 \keyword{ package }
