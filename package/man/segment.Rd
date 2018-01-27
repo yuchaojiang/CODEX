@@ -44,10 +44,6 @@ segment(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, lmax, mode)
  
  Gene Urrutia \email{ urutia@live.unc.edu } 
 }
-\seealso{
-    \code{ \link{ segment } },
-    \code{ \link{ segmentHMM } }
-}
 \examples{
 Y_qc <- qcObjDemo$Y_qc
 Yhat <- normObjDemo$Yhat

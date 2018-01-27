@@ -12,7 +12,7 @@ convertForIGV( finalcall, outPath, filterFraction )
 \arguments{
     \item{ finalcall }{
     Final callset of CNVs with genotyping results returned from 
-    \code{ \link{ segment } } or \code{ \link{ segmentHMM } } }
+    \code{\link{segment}} or \code{\link{segmentHMM}} }
     \item{ outPath }{
     Directory to save to file.  If no directory is specified it is saved to the local directory.}
     \item{ filterFraction }{

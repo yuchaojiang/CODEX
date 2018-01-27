@@ -10,7 +10,6 @@ normalized read depth from whole exome sequencing.  This algorithm incorporates 
 \usage{
 segmentHMM(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
     \item{Y_qc}{
     Raw read depth matrix after quality control procedure returned from 
@@ -41,10 +40,6 @@ segmentHMM(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode)
  Yuchao Jiang \email{yuchaoj@wharton.upenn.edu} 
  
  Gene Urrutia \email{urutia@live.unc.edu} 
-}
-\seealso{
-    \code{ \link{ segment } },
-    \code{ \link{ segmentHMM } }
 }
 \examples{
 Y_qc <- qcObjDemo$Y_qc
