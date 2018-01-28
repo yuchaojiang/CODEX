@@ -151,5 +151,6 @@ segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode){
   }
   
   finalcall = do.call("rbind", finalcalls)
+  if( mode == 'integer') finalcall = finalcall[finalcall$copy_no!=2,]
   finalcall
 }
