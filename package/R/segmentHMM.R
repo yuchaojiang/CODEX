@@ -2,6 +2,7 @@ segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode){
   
   #Normalize reads by expected reads
   YhatOptK = Yhat[[optK]]
+  Z=log(pmax(0.01,Y_qc)/YhatOptK)
   Z=(Y_qc-YhatOptK)/sqrt(YhatOptK)
   
   exomtarg=matrix(ncol=3,nrow=length(ref_qc))
