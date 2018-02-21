@@ -86,8 +86,7 @@ normalize <- function(Y_qc, gc_qc, K) {
                                 offset = L[, t], family = poisson)$coefficients
                 }
                 gh <- ghat %*% t(hhatnew)
-                gh <- gh - matrix(nrow = nrow(Y_qc), ncol = ncol(Y_qc), 
-                                  data = apply(gh, 1, mean), byrow = FALSE)
+                gh <- scale(gh, center = TRUE, scale = FALSE)
                 hhatnew <- svd(gh, nu = k, nv = k)$v
                 hhdiff[hiter] <- sum((hhatnew - hhat)^2)/length(hhat)
                 message("\t\t\t", "hhat diff =", signif(hhdiff[hiter], 3))
