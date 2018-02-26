@@ -85,6 +85,14 @@ segment <- function(Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, lmax, mode) {
     cnvtype <- rep(NA, length(st))
     cnvtype[finalcall[, 7] < 2] <- "del"
     cnvtype[finalcall[, 7] > 2] <- "dup"
+    if(nrow(finalcall)==0){
+      finalcall=matrix(nrow=1,ncol=13)
+      colnames(finalcall) <- c("sample_name", "chr", "cnv", "st_bp", 
+                               "ed_bp", "length_kb", "st_exon", "ed_exon", "raw_cov", 
+                               "norm_cov", "copy_no", "lratio", "mBIC")
+      return(finalcall)
+      break
+    }
     if (nrow(finalcall) == 1) {
         finalcall <- t(as.matrix(c(finalcall[, 1:2], cnvtype, st, ed, (ed - 
             st + 1)/1000, finalcall[, 3:9])))
