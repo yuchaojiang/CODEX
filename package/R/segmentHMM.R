@@ -1,7 +1,7 @@
 segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode){
   
   #Normalize reads by expected reads
-  YhatOptK = Yhat[[optK]]
+  YhatOptK = Yhat[[which(K == optK)]]
   #Z=log(pmax(0.01,Y_qc)/YhatOptK)
   Z=(Y_qc-YhatOptK)/sqrt(YhatOptK)
   
