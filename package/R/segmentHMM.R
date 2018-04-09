@@ -129,7 +129,7 @@ segmentHMM = function( Y_qc, Yhat, optK, K, sampname_qc, ref_qc, chr, mode){
                     rep( "dup", length( stDup ) ) )
       st_bp = ref_qc@start[ st_exon ]
       ed_bp = ref_qc@start[ ed_exon ] + ref_qc@width[ ed_exon ] - 1
-      length_kb = ( ed_bp - st_bp ) / 1000
+      length_kb = ( ed_bp - st_bp + 1 ) / 1000
       raw_cov = sapply( seq_along( st_exon ), function ( j ){
         sum( Y_qc[ st_exon[ j ]:ed_exon[ j ], k ] )
       })
