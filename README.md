@@ -1,9 +1,7 @@
 <img border="0" src="http://bioconductor.org/shields/availability/release/CODEX.svg"/> <img border="0" src="http://bioconductor.org/shields/downloads/CODEX.svg"/> <img border="0" src="http://bioconductor.org/shields/build/release/bioc/CODEX.svg"/> <img border="0" src="http://bioconductor.org/shields/years-in-bioc/CODEX.svg"/>
 
 
-# NOTE
-
-This page is not longer updated/maintained. Please visit [CODEX2](https://github.com/yuchaojiang/CODEX2).
+# NOTE: This page is not longer updated/maintained. Please visit [CODEX2](https://github.com/yuchaojiang/CODEX2).
 
 
 # CODEX
